@@ -9,6 +9,7 @@ import { useState } from "react";
 import animationData from "@/data/confetti.json";
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
+import Image from "next/image";
 
 export const BentoGrid = ({
   className,
@@ -53,10 +54,10 @@ export const BentoGridItem = ({
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText('agungajipradana.business@gmail.com')
+    navigator.clipboard.writeText("agungajipradana.business@gmail.com");
 
-    setCopied(true)
-  }
+    setCopied(true);
+  };
 
   return (
     <div
@@ -70,13 +71,23 @@ export const BentoGridItem = ({
           "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(93,108,111,1) 26%, rgba(0,212,255,1) 100%)",
       }}
     >
-      <div className={`${id === 6 && 'flex justify-center'} h-full`}>
+      <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className="w-full h-full absolute">
           {img && (
-            <img
+            // <img
+            //   src={img}
+            //   alt={img}
+            //   className={cn(imgClassName, "object-cover, object-center")}
+            // />
+            <Image
               src={img}
               alt={img}
-              className={cn(imgClassName, "object-cover, object-center")}
+              className={cn(imgClassName, "object-cover object-center")}
+              width={200} // Tambahkan nilai default untuk width
+              height={200} // Tambahkan nilai default untuk height
+              layout="intrinsic" // Memungkinkan gambar untuk menyesuaikan secara otomatis dengan ukuran aslinya
+              quality={100} // Menjaga kualitas gambar
+              unoptimized // Jika Anda ingin melewatkan optimasi gambar
             />
           )}
         </div>
@@ -86,13 +97,23 @@ export const BentoGridItem = ({
           }`}
         >
           {spareImg && (
-            <img
+            // <img
+            //   src={spareImg}
+            //   alt={spareImg}
+            //   className={cn(
+            //     imgClassName,
+            //     "object-cover, object-center w-full h-full"
+            //   )}
+            // />
+            <Image
               src={spareImg}
               alt={spareImg}
-              className={cn(
-                imgClassName,
-                "object-cover, object-center w-full h-full"
-              )}
+              className={cn(imgClassName, "object-cover object-center")}
+              width={200} // Tambahkan nilai default untuk width
+              height={200} // Tambahkan nilai default untuk height
+              layout="intrinsic" // Memungkinkan gambar untuk menyesuaikan secara otomatis dengan ukuran aslinya
+              quality={100} // Menjaga kualitas gambar
+              unoptimized // Jika Anda ingin melewatkan optimasi gambar
             />
           )}
         </div>
@@ -127,16 +148,14 @@ export const BentoGridItem = ({
                    <span className="py-4 px-3 rounded-lg text-center bg-[#10132e]"/>
                 </div> */}
               <div className="flex flex-col gap-3 lg:gap-8">
-                {["React.js", "Next.js", "Tailwind CSS", "Three.js"].map(
-                  (item) => (
-                    <span
-                      key={item}
-                      className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
-                    >
-                      {item}
-                    </span>
-                  )
-                )}
+                {["", "Next", "React", "Tailwind CSS"].map((item) => (
+                  <span
+                    key={item}
+                    className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                  >
+                    {item}
+                  </span>
+                ))}
                 <span className="py-4 px-3 rounded-lg text-center bg-[#10132e]" />
               </div>
               <div className="flex flex-col gap-3 lg:gap-8">
@@ -168,12 +187,12 @@ export const BentoGridItem = ({
                 />
               </div>
 
-              <MagicButton 
-              title={copied ? 'Email copied' : 'Copy my email'}
-              icon={<IoCopyOutline />}
-              position="left"
-              otherClasses="!bg-[#161a31]"
-              handleClick={handleCopy}
+              <MagicButton
+                title={copied ? "Email copied" : "Copy my email"}
+                icon={<IoCopyOutline />}
+                position="left"
+                otherClasses="!bg-[#161a31]"
+                handleClick={handleCopy}
               />
             </div>
           )}
