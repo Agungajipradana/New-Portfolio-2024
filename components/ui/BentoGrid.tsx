@@ -85,7 +85,6 @@ export const BentoGridItem = ({
               className={cn(imgClassName, "object-cover object-center")}
               width={200} // Tambahkan nilai default untuk width
               height={200} // Tambahkan nilai default untuk height
-              layout="intrinsic" // Memungkinkan gambar untuk menyesuaikan secara otomatis dengan ukuran aslinya
               quality={100} // Menjaga kualitas gambar
               unoptimized // Jika Anda ingin melewatkan optimasi gambar
             />
@@ -111,7 +110,6 @@ export const BentoGridItem = ({
               className={cn(imgClassName, "object-cover object-center")}
               width={200} // Tambahkan nilai default untuk width
               height={200} // Tambahkan nilai default untuk height
-              layout="intrinsic" // Memungkinkan gambar untuk menyesuaikan secara otomatis dengan ukuran aslinya
               quality={100} // Menjaga kualitas gambar
               unoptimized // Jika Anda ingin melewatkan optimasi gambar
             />

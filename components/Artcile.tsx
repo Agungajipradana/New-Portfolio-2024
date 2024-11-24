@@ -1,17 +1,17 @@
-import { companies, testimonials } from "@/data";
+import { companies, article } from "@/data";
 import { InfiniteMovingCards } from "./ui/InfiniteMovingCards";
 import Image from "next/image";
 
 const Clients = () => {
   return (
-    <div className="py-20" id="testimonials">
-      <h1 className="heading text-white-100">
-        Kind words from
-        <span className="text-purple"> satisfied clients</span>
+    <div className="py-20" id="article">
+      <h1 className="heading text-white-100 mb-10">
+      Discover insights and stories in
+        <span className="text-purple"> my latest article</span>
       </h1>
       <div className="flex flex-col items-center text-white-100 max-lg:mt-10">
         <InfiniteMovingCards
-          items={testimonials}
+          items={article}
           direction="right"
           speed="slow"
         />

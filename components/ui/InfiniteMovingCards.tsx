@@ -11,9 +11,10 @@ export const InfiniteMovingCards = ({
   className,
 }: {
   items: {
-    quote: string;
+    img: string;
     name: string;
-    title: string;
+    paragraph1: string;
+    paragraph2: string;
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
@@ -100,22 +101,20 @@ export const InfiniteMovingCards = ({
                 aria-hidden="true"
                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
               ></div>
-              <span className="relative z-20 text-sm md:text-lg leading-[1.6] text-white font-normal">
-                {item.quote}
-              </span>
-              <div className="relative z-20 mt-6 flex flex-row items-center">
-                <span className="flex flex-col gap-1">
-                  <div className="me-3">
-                    <img src="/profile.svg" alt="profile" />
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <span className="text-xl leading-[1.6] text-white font-bold">
-                      {item.name}
-                    </span>
-                    <span className="text-sm leading-[1.6] text-white font-normal">
-                      {item.title}
-                    </span>
-                  </div>
+              <div className="flex justify-center ">
+                <img className="w-40 h-40" src={item.img} alt="profile" />
+              </div>
+              <div className="relative z-20 my-6 flex justify-center items-center">
+                <span className="text-xl md:text-3xl leading-[1.6] text-white font-bold">
+                  <h1>{item.name}</h1>
+                </span>
+              </div>
+              <div className="flex flex-col gap-2">
+                <span className="text-sm md:text-lg leading-[1.6] text-white font-normal">
+                  {item.paragraph1}
+                </span>
+                <span className="relative z-20 text-sm md:text-lg leading-[1.6] text-white font-normal">
+                  {item.paragraph2}
                 </span>
               </div>
             </blockquote>
